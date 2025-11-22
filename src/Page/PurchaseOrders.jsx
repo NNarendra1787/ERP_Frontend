@@ -18,7 +18,7 @@ import {
 
 import DeleteIcon from "@mui/icons-material/Delete";
 
-import { getSupplier } from "../api/supplierApi";
+import { getSuppliers } from "../api/supplierApi";
 import { getProducts } from "../api/productApi";
 import {
   getPurchaseOrders,
@@ -44,7 +44,7 @@ export default function PurchaseOrders() {
 
   const loadData = async () => {
     try {
-      setSuppliers(await getSupplier());
+      setSuppliers(await getSuppliers());
       setProducts(await getProducts());
       setOrders(await getPurchaseOrders());
     } catch (err) {

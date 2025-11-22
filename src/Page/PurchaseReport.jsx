@@ -17,7 +17,7 @@ import {
 } from "@mui/material";
 
 import { getPurchaseReport } from "../api/PurchaseReportApi";
-import { getSupplier } from "../api/supplierApi";
+import { getSuppliers } from "../api/supplierApi";
 
 import { CSVLink } from "react-csv";
 import jsPDF from "jspdf";
@@ -35,7 +35,7 @@ export default function PurchaseReport() {
   const [purchases, setPurchases] = useState([]);
 
   const loadSuppliers = async () => {
-    setSuppliers(await getSupplier());
+    setSuppliers(await getSuppliers());
   };
 
   const generateReport = async () => {

@@ -1,6 +1,6 @@
 import api from "./axios";
 
-export const getSupplier = async()=>{
+export const getSuppliers = async ()=>{
     const res = await api.get("/suppliers");
     return res.data;
 }
@@ -10,12 +10,12 @@ export const addSupplier = async (data)=>{
     return res.data;
 }
 
-export const updatedSupplier = async(id, data)=>{
+export const updateSupplier = async (id, data)=>{
     const res = await api.put(`/suppliers/${id}`, data);
     return res.data;
 }
 
 export const deleteSupplier = async (id)=>{
-    const res = await api.delete(`supplier/${id}`);
+    const res = await api.delete(`/suppliers/${id}`);
     return res.data;
 }

@@ -21,9 +21,9 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import {
-  getSupplier,
+  getSuppliers,
   addSupplier,
-  updatedSupplier,
+  updateSupplier,
   deleteSupplier,
 } from "../api/supplierApi";
 
@@ -39,7 +39,7 @@ export default function Suppliers() {
 
   const loadData = async () => {
     try {
-      const data = await getSupplier();
+      const data = await getSuppliers();
       setSuppliers(data);
     } catch (err) {
       toast.error("Error loading suppliers");
@@ -58,7 +58,7 @@ export default function Suppliers() {
   const handleSubmit = async (data) => {
     try {
       if (editData) {
-        await updatedSupplier(editData._id, data);
+        await updateSupplier(editData._id, data);
         toast.success("Supplier updated!");
       } else {
         await addSupplier(data);
